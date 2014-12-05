@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Sort</title>
+</head>
+<body>
+
+<h1>Simple Sorting Algorithm</h1>
+
+<pre>
+Author: Rajan Gupta
+Created: Fri Dec 05 2014 11:47:34 GMT+0530 (IST)
+Visited: <span id="date"></span>
+</pre>
+
+<h3>Input</h3>
+<pre id="input"></pre>
+
+<h3>Code</h3>
+<pre>
+	function simple_sort(input) {
+		var temp;
+		for (i = 0; i < input.length-1; i++) {
+			for (j = i+1; j < input.length; j++) {
+				if (input[i] > input[j]) {
+					temp = input[i];
+					input[i] = input[j];
+					input[j] = temp;
+				}
+			}
+		}
+		return input;
+	}
+</pre>
+
+<h3>Answer</h3>
+<button class="button" onclick="document.getElementById('answer').innerHTML = simple_sort(array)">Click me to see the answer</button>
+<pre id="answer"></pre>
+
+<script>
+function simple_sort(input) {
+	var temp;
+	for (i = 0; i < input.length-1; i++) {
+		for (j = i+1; j < input.length; j++) {
+			if (input[i] > input[j]) {
+				temp = input[i];
+				input[i] = input[j]
+				input[j] = temp
+			}
+		}
+	}
+	return input
+}
+
+var array = [10,99,5,3,7,9,6,3];
+document.getElementById("input").innerHTML = array
+document.getElementById("date").innerHTML = Date()
+// window.alert(simple_sort(array));
+</script>
+
+</body>
+</html> 
