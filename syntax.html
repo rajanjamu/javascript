@@ -6,9 +6,18 @@
 </head>
 <body>
 	<h2>Javascript Syntax Practice</h2>
+	<p id="demo" onmouseover="big(this)" onmouseout="small(this)">Hover mouse over this</p>
 
 	<script>
-		// document.write(Number.MAX_VALUE+"<br />");
+		function big(x) {
+			x.innerHTML="Excited";
+			x.style.color="red";
+		}
+
+		function small(x) {
+			x.innerHTML="Bored";
+			x.style.color="black";
+		}
 	</script>
 	<noscript>
 		<h3>This site requires javascript</h3>
