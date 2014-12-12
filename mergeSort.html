@@ -19,58 +19,17 @@ Visited: <span id="date"></span>
 <pre id="input"></pre>
 
 <h3>Code</h3>
-<pre>
-function merge_sort(inArray) {
-	if (inArray.length > 1) {
-		var splitArray = split(inArray);
-		return merge(merge_sort(splitArray[0]), merge_sort(splitArray[1]));
-	}
-	else {
-		return inArray;
-	}
-}
-
-function split(inArray) {
-	var outArray = [];
-	var len = inArray.length;
-	if (len % 2 == 0) {
-		return outArray = [inArray.slice(0,len/2),inArray.slice(len/2,len)];
-	}
-	else {
-		return outArray = [inArray.slice(0,len/2+1),inArray.slice(len/2+1,len+1)];
-	}
-}
-
-function merge(inArray1, inArray2) {
-	var len1 = inArray1.length;
-	var len2 = inArray2.length;
-	var i = 0, j = 0, k = 0;
-	var outArray = []
-	while (i < len1 && j < len2) {
-		if (inArray1[i] < inArray2[j]) {
-			outArray[k] = inArray1[i]
-			i += 1
-		}
-		else {
-			outArray[k] = inArray2[j]
-			j += 1
-		}
-		k += 1
-	}
-	if (i == len1) {outArray = outArray.concat(inArray2.slice(j,len2+1));}
-	if (j == len2) {outArray = outArray.concat(inArray1.slice(i,len1+1));}
-	return outArray;
-}
-</pre>
+<pre id="code"></pre>
 
 <h3>Answer</h3>
 <button class="button" onclick="document.getElementById('answer').innerHTML = merge_sort(array)">Click me to see the answer</button>
 <pre id="answer"></pre>
 
 <script>
-array = [10,99,5,3,7,9,6,3];
-document.getElementById("input").innerHTML = array
-document.getElementById("date").innerHTML = Date()
+	array = [10,99,5,3,7,9,6,3];
+	document.getElementById("input").innerHTML = array;
+	document.getElementById("date").innerHTML = Date();
+	document.getElementById("code").innerHTML = merge_sort.toString() + "<br/><br/>" + split.toString()+ "<br/><br/>" + merge.toString();
 </script>
 
 </body>
